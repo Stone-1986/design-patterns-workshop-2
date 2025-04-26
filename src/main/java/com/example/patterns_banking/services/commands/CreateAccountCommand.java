@@ -33,7 +33,10 @@ public class CreateAccountCommand implements ICommand<Account> {
 
     Customer customer = customerOptional.get();
     AccountFactory accountFactory = accountFactoryProvider.getFactory(accountDTO.getAccountType());
-    Account account = accountFactory.createAccount(customer, accountDTO.getAccountNumber(), accountDTO.getBalance());
+    Account account = accountFactory.createAccount(
+            customer, accountDTO.getAccountNumber(),
+            accountDTO.getBalance()
+    );
     return accountRepository.save(account);
   }
 }

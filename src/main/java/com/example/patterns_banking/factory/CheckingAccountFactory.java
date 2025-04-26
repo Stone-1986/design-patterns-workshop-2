@@ -5,10 +5,12 @@ import com.example.patterns_banking.models.CheckingAccount;
 import com.example.patterns_banking.models.Customer;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
+
 @Component
 public class CheckingAccountFactory implements AccountFactory {
   @Override
-  public Account createAccount(Customer customer, String accountNumber, Double balance) {
+  public Account createAccount(Customer customer, String accountNumber, BigDecimal balance) {
     CheckingAccount account = new CheckingAccount();
     account.setAccountNumber(accountNumber);
     account.setBalance(balance);
